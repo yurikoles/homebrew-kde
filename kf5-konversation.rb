@@ -3,10 +3,10 @@ require "formula"
 class Kf5Konversation < Formula
   desc "A user-friendly and fully-featured IRC client"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/unstable/konversation/1.6-beta1/src/konversation-1.6-beta1.tar.xz"
-  sha256 "7c818eb5d74e84847e66849785eb3f52d50ba8dc0a80d00cb5ab1b852135b431"
+  url "http://download.kde.org/stable/konversation/1.7.2/src/konversation-1.7.2.tar.xz"
+  sha256 "5ff96e84cee4e1eefc404a31d778067ea50dddd8a6c848911fac70bd52812618"
 
-  head "git://anongit.kde.org/konversation.git", :branch => "master"
+  head "git://anongit.kde.org/konversation.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

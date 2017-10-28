@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kross < Formula
   desc "Multi-language application scripting"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/portingAids/kross-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/portingAids/kross-5.39.0.tar.xz"
   sha256 "d06ddc6157e150ea91be0f790df35a2e14239de0179f0cd8f048ad93597c09be"
 
   head "git://anongit.kde.org/kross.git"

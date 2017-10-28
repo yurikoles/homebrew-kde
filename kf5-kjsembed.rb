@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kjsembed < Formula
   desc "Embedded JS"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/portingAids/kjsembed-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/portingAids/kjsembed-5.39.0.tar.xz"
   sha256 "ebcd97eaa6a5e36f6af7201e10f716aaab3a8cda984ce6b115a8274072f778c4"
 
   head "git://anongit.kde.org/attica.git"

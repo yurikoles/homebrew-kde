@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kdeclarative < Formula
   desc "Provides integration of QML and KDE Frameworks"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kdeclarative-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/kdeclarative-5.39.0.tar.xz"
   sha256 "f734913d40d94eafabf7d5a090c50a5e8d1caa597aabdf2eab5862f39db71cd1"
 
   head "git://anongit.kde.org/kdeclarative.git"

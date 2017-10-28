@@ -3,7 +3,7 @@ require "formula"
 class Kf5Ki18n < Formula
   desc "Advanced internationalization framework"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/ki18n-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/ki18n-5.39.0.tar.xz"
   sha256 "5e31cac2735db66de620d28a5d561f15aaafd6181c1ff7ca3a03b20ce3c305a5"
 
   head "git://anongit.kde.org/ki18n.git"

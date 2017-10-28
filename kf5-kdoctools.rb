@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kdoctools < Formula
   desc "Documentation generation from docbook"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kdoctools-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/kdoctools-5.39.0.tar.xz"
   sha256 "57a12705b87754d8bbc76e3400691d02072d61bd0e2e4b62845dca558f9be49d"
 
   head "git://anongit.kde.org/kdoctools.git"

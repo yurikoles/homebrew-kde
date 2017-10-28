@@ -3,7 +3,7 @@ require "formula"
 class Kf5Phonon < Formula
   desc "The multimedia framework for KF5"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/phonon/4.9.1/phonon-4.9.1.tar.xz"
+  url "https://download.kde.org/stable/phonon/4.9.1/phonon-4.9.1.tar.xz"
   sha256 "67bee986f85ca8b575186c8ba58a85886cb3b1c3567c86a118d56129f221e69c"
 
   head "git://anongit.kde.org/phonon.git"

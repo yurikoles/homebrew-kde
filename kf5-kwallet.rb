@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kwallet < Formula
   desc "Secure and unified container for user passwords"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kwallet-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/kwallet-5.39.0.tar.xz"
   sha256 "5f83a5ca245773abfe5b31c536996ca1aee312d512181d133edcd890874f9fee"
 
   head "git://anongit.kde.org/kwallet.git"

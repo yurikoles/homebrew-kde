@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kio < Formula
   desc "Resource and network access abstraction"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kio-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/kio-5.39.0.tar.xz"
   sha256 "96cbea5aba34b4e1b0df5ecfb4aaf65ff324341fb00f99796146536557232f24"
 
   head "git://anongit.kde.org/kio.git"

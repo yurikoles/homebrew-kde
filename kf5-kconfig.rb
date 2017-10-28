@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kconfig < Formula
   desc "Configuration system"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kconfig-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/kconfig-5.39.0.tar.xz"
   sha256 "3c504d69a38d7fa2e89dbe15b8c02d0803be20f3907c86f18be090031c223104"
 
   head "git://anongit.kde.org/kconfig.git"

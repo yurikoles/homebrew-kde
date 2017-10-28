@@ -25,14 +25,17 @@ class Kf5Khtml < Formula
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
   depends_on "haraldf/kf5/kf5-sonnet"
   depends_on "haraldf/kf5/kf5-kxmlgui"
-  depends_on "openssl"
   depends_on "qt"
+  depends_on "openssl@1.1"
   depends_on "jpeg"
   depends_on "giflib"
   depends_on "libpng"
 
   def install
     args = std_cmake_args
+    args << "-DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl@1.1/lib/libcrypto.dylib"
+    args << "-DOPENSSL_SSL_LIBRARY=/usr/local/opt/openssl@1.1/lib/libssl.1.1.dylib"
+    args << "-DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl@1.1/"
 
     mkdir "build" do
       system "cmake", "..", *args

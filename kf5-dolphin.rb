@@ -3,6 +3,8 @@ require "formula"
 class Kf5Dolphin < Formula
   desc "KDE File Manager"
   homepage "http://www.kde.org/"
+  url "https://download.kde.org/stable/applications/$pkgver/src/dolphin-17.08.2.tar.xz"
+  sha256 "6af1916c73278b9255ce28205fe2f94de0f22d1979d785b1062e0343f56723aa"
 
   head "git://anongit.kde.org/dolphin.git"
 
@@ -42,5 +44,4 @@ class Kf5Dolphin < Formula
       ln -sf "#{prefix}/bin/dolphin.app" "~/Applications/KDE/"
     EOS
   end
-
 end

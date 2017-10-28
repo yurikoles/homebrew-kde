@@ -16,9 +16,11 @@ class Kf5Kauth < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 
   def caveats; <<-EOS.undent

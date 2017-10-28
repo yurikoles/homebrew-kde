@@ -33,8 +33,8 @@ class Kf5Khtml < Formula
 
   def install
     args = std_cmake_args
-    args << "-DOPENSSL_CRYPTO_LIBRARY=#{CMAKE_PREFIX_PATH}/openssl@1.1/lib/libcrypto.dylib"
-    args << "-DOPENSSL_SSL_LIBRARY=#{CMAKE_PREFIX_PATH}/openssl@1.1/lib/libssl.1.1.dylib"
+    args << "-DOPENSSL_CRYPTO_LIBRARY=#{CMAKE_PREFIX_PATH}/opt/openssl@1.1/lib/libcrypto.dylib"
+    args << "-DOPENSSL_SSL_LIBRARY=#{CMAKE_PREFIX_PATH}/opt/openssl@1.1/lib/libssl.1.1.dylib"
     args << "-DOPENSSL_INCLUDE_DIR=#{CMAKE_PREFIX_PATH}/opt/openssl@1.1/"
 
     mkdir "build" do

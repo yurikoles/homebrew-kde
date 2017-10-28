@@ -3,7 +3,7 @@ require "formula"
 class Kf5Konversation < Formula
   desc "A user-friendly and fully-featured IRC client"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/konversation/1.7.2/src/konversation-1.7.2.tar.xz"
+  url "https://download.kde.org/stable/konversation/1.7.2/src/konversation-1.7.2.tar.xz"
   sha256 "5ff96e84cee4e1eefc404a31d778067ea50dddd8a6c848911fac70bd52812618"
 
   head "git://anongit.kde.org/konversation.git"

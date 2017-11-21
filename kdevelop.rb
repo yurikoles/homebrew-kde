@@ -1,16 +1,12 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "https://kdevelop.org"
+  url "https://download.kde.org/stable/kdevelop/5.2.0/src/kdevelop-5.2.0.tar.xz"
+  sha256 "88e7a8f2f57a4c688da7a6d522b06e2e70ebddf2f9129b8f93e4c74df029e900"
 
   head "git://anongit.kde.org/kdevelop.git"
 
-  stable do
-    url "https://download.kde.org/stable/kdevelop/5.1.2/src/kdevelop-5.1.2.tar.xz"
-    sha256 "af54e807847d145fe5f3eb55962ed0d22e6363c2bc6c32167e51ca4823c00ac7"
-    depends_on "KDE-mac/kde/kdevplatform"
-  end
-
-  depends_on "cmake" => :build
+  depends_on "boost" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
@@ -18,32 +14,45 @@ class Kdevelop < Formula
   depends_on "gdb" => :optional
   depends_on "cppcheck" => :optional
   depends_on "subversion" => :optional
-  depends_on "KDE-mac/kde/okteta" => :optional
+  depends_on "cvs" => :build
+  depends_on "gdb" => :build
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "KDE-mac/kde/plasma-framework" => :optional
+  # depends_on "KDE-mac/kde/okteta" => :optional
 
-  depends_on "qt"
+  depends_on "KDE-mac/kde/konsole" => [:run, :optional]
+
+  depends_on "cmake" # For cmake integration need set as depends instead of :build ([:build, :optional] fails)
   depends_on "llvm"
-  depends_on "KDE-mac/kde/kdevplatform"
+  depends_on "KDE-mac/kde/kf5-breeze-icons"
+  depends_on "KDE-mac/kde/kf5-kcmutils"
+  depends_on "KDE-mac/kde/kf5-kitemmodels"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-knotifyconfig"
+  depends_on "KDE-mac/kde/kf5-ktexteditor"
+  depends_on "KDE-mac/kde/kf5-threadweaver"
+  depends_on "KDE-mac/kde/grantlee5"
+  depends_on "KDE-mac/kde/libkomparediff2"
+
+  conflicts_with "KDE-mac/kde/kdevplatform", :because => "Now included in Kdevelop"
 
   patch :DATA
 
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
-    args << "-DQt5WebKitWidgets_DIR=#{HOMEBREW_PREFIX}/lib/cmake/Qt5WebKitWidgets"
 
     mkdir "build" do
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kdevelop.app/Contents/Info.plist"
   end
 
@@ -81,10 +90,10 @@ index 43574b58e4..8d9cd8b4ab 100644
 -update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-diff --git a/languages/clang/CMakeLists.txt b/languages/clang/CMakeLists.txt
+diff --git a/languages/clang/CMakeLists.txt b/plugins/clang/CMakeLists.txt
 index cbf6b2c9ce..aaea30c9a5 100644
---- a/languages/clang/CMakeLists.txt
-+++ b/languages/clang/CMakeLists.txt
+--- a/plugins/clang/CMakeLists.txt
++++ b/plugins/clang/CMakeLists.txt
 @@ -135,4 +135,5 @@ target_link_libraries(kdevclangsupport
  )
  

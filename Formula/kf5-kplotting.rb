@@ -4,6 +4,8 @@ class Kf5Kplotting < Formula
   url "https://download.kde.org/stable/frameworks/5.70/kplotting-5.70.0.tar.xz"
   sha256 "90290e73977dee9f5dd400d926e82bd7b5d1f59d5d04007ca035fd8894b044f2"
 
+  revision 1
+
   head "git://anongit.kde.org/kplotting.git"
 
   depends_on "cmake" => :build

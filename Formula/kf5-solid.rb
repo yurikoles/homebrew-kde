@@ -4,6 +4,8 @@ class Kf5Solid < Formula
   url "https://download.kde.org/stable/frameworks/5.70/solid-5.70.0.tar.xz"
   sha256 "e76b0f2d64853dcfa7e5887e9733d4e9821bba6e68e62f3488b21b1ed979962a"
 
+  revision 1
+
   head "git://anongit.kde.org/solid.git"
 
   depends_on "bison" => :build

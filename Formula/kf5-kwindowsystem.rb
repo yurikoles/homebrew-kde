@@ -4,6 +4,8 @@ class Kf5Kwindowsystem < Formula
   url "https://download.kde.org/stable/frameworks/5.70/kwindowsystem-5.70.0.tar.xz"
   sha256 "9003fded6cb8338521024bdcfccc4d36336f3f9cc9a4e6ba4eaa50bd8064c828"
 
+  revision 1
+
   head "git://anongit.kde.org/kwindowsystem.git"
 
   depends_on "cmake" => :build

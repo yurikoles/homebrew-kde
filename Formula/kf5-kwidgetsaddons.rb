@@ -4,6 +4,8 @@ class Kf5Kwidgetsaddons < Formula
   url "https://download.kde.org/stable/frameworks/5.70/kwidgetsaddons-5.70.0.tar.xz"
   sha256 "d294984b6a3f96459ec505002c3379bde862cf16d914e5f03dd7a620203d830e"
 
+  revision 1
+
   head "git://anongit.kde.org/kwidgetsaddons.git"
 
   depends_on "cmake" => :build
